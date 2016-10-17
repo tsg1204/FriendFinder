@@ -1,0 +1,25 @@
+{
+  "name": "friendfinder",
+  "version": "1.0.0",
+  "description": "kind of match or tinder app :)",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tsg1204/FriendFinder.git"
+  },
+  "keywords": [
+    "match",
+    "finder",
+    "friend"
+  ],
+  "author": "Tatiana Grigorieva",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tsg1204/FriendFinder/issues"
+  },
+  "homepage": "https://github.com/tsg1204/FriendFinder#readme"
+}
