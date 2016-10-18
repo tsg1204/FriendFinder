@@ -43,7 +43,7 @@
           </select>
 
           <h3><strong>Question 2</strong></h3>
-          <h4>Does your dog determine your day or do you determine your dogs day?</h4>
+          <h4>Does your dog determine your day?</h4>
           <select data-placeholder="" class="chosen-select" id="q2">
                <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -125,7 +125,7 @@
           </select>
 
           <h3><strong>Question 9</strong></h3>
-          <h4>On Monday, do you feel exhausted from the weekend or well rested and recharged?</h4>
+          <h4>On Monday, do you feel exhausted from the weekend?</h4>
           <select data-placeholder="" class="chosen-select" id="q9">
                <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -136,7 +136,7 @@
           </select>
 
           <h3><strong>Question 10</strong></h3>
-          <h4>Are you for or against hanging a Confederate flag on the back of your pickup truck?</h4>
+          <h4>Are you for hanging a Confederate flag on the back of your pickup truck?</h4>
           <select data-placeholder="" class="chosen-select" id="q10">
                <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -232,23 +232,23 @@
                // AJAX post the data to the friends API. 
                $.post(currentURL + "/api/friends", userData, function(data){
 
-                    var oldFriends = [];
+                    var tempArr = [];
                     for (var i = 0; i < data.length; i++) {
-                              oldFriends.push(data[i].scores);
+                              tempArr.push(data[i].scores);
                     }
                     var score = 0;
                     var scoreArray = [];
                     function difference(a, b) { return Math.abs(a - b); }
-                    for (var i = 0; i < oldFriends.length-1; i++) {
+                    for (var i = 0; i < tempArr.length-1; i++) {
                          for (var j = 0; j < 10; j++) {
-                              score+= difference(oldFriends[i][j], oldFriends[oldFriends.length-1][j]);
+                              score+= difference(tempArr[i][j], tempArr[tempArr.length-1][j]);
                          }
                          scoreArray.push(score);
                          score = 0;
                     }
                     var indexInArray = scoreArray.indexOf(Math.min(...scoreArray));
-                    console.log(oldFriends);
-                    console.log(indexInArray);
+                    //console.log(tempArr);
+                    //console.log(indexInArray);
 
 
                     $("#matchName").html(data[indexInArray].name);
