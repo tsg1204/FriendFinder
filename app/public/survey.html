@@ -242,6 +242,8 @@
                     for (var i = 0; i < tempArr.length-1; i++) {
                          for (var j = 0; j < 10; j++) {
                               score+= difference(tempArr[i][j], tempArr[tempArr.length-1][j]);
+                              //console.log(tempArr[i][j]);
+                              //console.log(tempArr[tempArr.length-1][j]);
                          }
                          scoreArray.push(score);
                          score = 0;
